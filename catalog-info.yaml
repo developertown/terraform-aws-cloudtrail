@@ -1,0 +1,15 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: terraform-aws-cloudtrail
+  description: AWS Cloudtrail Terraform module
+  annotations:
+    github.com/project-slug: developertown/terraform-aws-cloudtrail
+  tags:
+    - terraform
+    - aws
+    - cloudtrail
+spec:
+  type: terraform-module
+  lifecycle: production
+  owner: dt-devops
