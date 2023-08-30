@@ -149,7 +149,7 @@ data "aws_iam_policy_document" "cloudtrail" {
   statement {
     actions = ["logs:CreateLogStream", "logs:PutLogEvents"]
     resources = [
-      "${one(aws_cloudwatch_log_group.cloudtrail[*].arn)}:*"
+      local.enabled ? "${one(aws_cloudwatch_log_group.cloudtrail[*].arn)}:*" : ""
     ]
     effect = "Allow"
   }
@@ -176,8 +176,9 @@ module "cloudtrail_s3_bucket" {
   source  = "cloudposse/cloudtrail-s3-bucket/aws"
   version = "0.26.2"
 
-  stage = var.environment
-  name  = local.name
+  stage         = var.environment
+  name          = local.name
+  force_destroy = var.bucket_force_destroy
 }
 
 module "log_metric_filter" {

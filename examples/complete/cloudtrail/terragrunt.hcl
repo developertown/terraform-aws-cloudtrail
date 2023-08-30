@@ -14,6 +14,8 @@ inputs = {
 
   name = "dt-terraform-test"
 
+  bucket_force_destroy = true
+
   tags = {
     "Company" = "DeveloperTown"
   }

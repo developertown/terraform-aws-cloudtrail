@@ -51,3 +51,9 @@ variable "bucket_prefix" {
   description = "The prefix to use for the bucket"
   default     = "trails"
 }
+
+variable "bucket_force_destroy" {
+  type        = bool
+  description = "Force destroy the bucket"
+  default     = false
+}
