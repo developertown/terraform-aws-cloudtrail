@@ -24,6 +24,8 @@ inputs = {
 
   name = "dt-terraform-test"
 
+  bucket_force_destroy = true
+
   tags = {
     "Company" = "DeveloperTown"
   }
@@ -52,6 +54,7 @@ inputs = {
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
+| <a name="input_bucket_force_destroy"></a> [bucket\_force\_destroy](#input\_bucket\_force\_destroy) | Force destroy the bucket | `bool` | `false` | no |
 | <a name="input_bucket_id"></a> [bucket\_id](#input\_bucket\_id) | The bucket id | `string` | `""` | no |
 | <a name="input_bucket_name"></a> [bucket\_name](#input\_bucket\_name) | The name of the bucket to create | `string` | `""` | no |
 | <a name="input_bucket_prefix"></a> [bucket\_prefix](#input\_bucket\_prefix) | The prefix to use for the bucket | `string` | `"trails"` | no |
